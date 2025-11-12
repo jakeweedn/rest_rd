@@ -11,6 +11,11 @@ export const LocationSchema = new Schema(
 
 
 
+    },
+
+    {
+
+        toJSON: { virtuals: true }
     }
 
 

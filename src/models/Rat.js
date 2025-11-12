@@ -9,6 +9,11 @@ export const RatSchema = new Schema(
         picture: { type: String, required: true },
         specialties: [{ type: String, required: true }]
 
+    },
+
+    {
+        toJSON: { virtuals: true }
+
     }
 
 
