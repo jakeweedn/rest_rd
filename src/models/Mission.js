@@ -6,12 +6,12 @@ export const MissionSchema = new Schema(
 
         codename: { type: String, required: true },
         objective: { type: String, required: true },
-        year: { type: Number, required: true },
+        year: { type: String, required: true },
 
         locationId: { type: Schema.ObjectId, required: true, ref: 'Location' },
         ratId: { type: Schema.ObjectId, required: true, ref: 'Rat' },
 
-        completed: { type: Boolean, required: true },
+        completed: { type: Boolean, required: true }, //yes, keep this on schema even though not in data, later I will come up with way to mark complete when rat has finished the mission 
     },
 
     {

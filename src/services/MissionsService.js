@@ -16,6 +16,20 @@ class MissionsService {
 
     }
 
+    async createMission(missionData) {
+        const mission = await dbContext.Missions.create(missionData)
+
+        await mission.populate('rat')
+        await mission.populate('location')
+
+        return mission
+
+
+    }
+
+    //When I get back: Need to import Postman tests again for new Post request in postman.
+    // When the data type is ObjectId, I do not type anything in!! Just leave it!
+
 
 }
 
