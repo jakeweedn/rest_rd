@@ -9,10 +9,10 @@ class DbContext {
   // Values = mongoose.model('Value', ValueSchema);
   // Account = mongoose.model('Account', AccountSchema);
 
-  Rat = mongoose.model('Rat', RatSchema)
-  Mission = mongoose.model('Mission', MissionSchema)
+  Rats = mongoose.model('Rat', RatSchema)
+  Missions = mongoose.model('Mission', MissionSchema)
 
-  Location = mongoose.model('Location', LocationSchema)
+  Locations = mongoose.model('Location', LocationSchema)
 
 }
 
