@@ -6,7 +6,7 @@ class MissionsService {
     async getAllMissions() {
         const missions = await dbContext.Missions.find()
 
-            .populate('rat')
+            .populate('rat', '-name -picture')
             .populate('location')
 
 
