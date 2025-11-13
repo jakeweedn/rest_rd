@@ -27,9 +27,27 @@ class MissionsService {
 
     }
 
-    //When I get back: Need to import Postman tests again for new Post request in postman.
-    // When the data type is ObjectId, I do not type anything in!! Just leave it!
+    async updateMission(missionId) {
 
+        const missionToUpdate = await dbContext.Missions.findById(missionId)
+
+        if (!missionToUpdate) {
+
+            throw new Error("There is no mission there. Bad id")
+        }
+
+        missionToUpdate.completed = true
+
+        await missionToUpdate.save()
+
+        return missionToUpdate
+
+        //Note: Leave the missionId parameter in the request. I know it seems weird, but I am not the one selecting which specific mission to update to completed, that's Boise Codeworks's job. 
+
+        // Note: I decided to write this in short hand without a missionData parameter It still worked.
+
+
+    }
 
 }
 
