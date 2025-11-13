@@ -11,7 +11,7 @@ export const MissionSchema = new Schema(
         locationId: { type: Schema.ObjectId, required: true, ref: 'Location' },
         ratId: { type: Schema.ObjectId, required: true, ref: 'Rat' },
 
-        completed: { type: Boolean, required: true }, //yes, keep this on schema even though not in data, later I will come up with way to mark complete when rat has finished the mission 
+        completed: { type: Boolean, default: false, required: true }, //yes, keep this on schema even though not in data, later I will come up with way to mark complete when rat has finished the mission 
     },
 
     {

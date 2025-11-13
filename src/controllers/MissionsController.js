@@ -34,9 +34,9 @@ export class MissionsController extends BaseController {
 
         try {
             const missionData = request.body
-            const userInfo = request.userInfo
+            // const userInfo = request.userInfo
 
-            missionData.handlerId = userInfo.id
+            // missionData.handlerId = userInfo.id
 
             const createdMission = await missionsService.createMission(missionData)
 

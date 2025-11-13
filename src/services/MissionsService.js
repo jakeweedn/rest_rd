@@ -19,7 +19,7 @@ class MissionsService {
     async createMission(missionData) {
         const mission = await dbContext.Missions.create(missionData)
 
-        await mission.populate('rat')
+        await mission.populate('rat', 'callsign')
         await mission.populate('location')
 
         return mission
