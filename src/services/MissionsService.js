@@ -44,8 +44,19 @@ class MissionsService {
 
         //Note: Leave the missionId parameter in the request. I know it seems weird, but I am not the one selecting which specific mission to update to completed, that's Boise Codeworks's job. 
 
-        // Note: I decided to write this in short hand without a missionData parameter It still worked.
+        // Note: I decided to write this in short hand without a missionData parameter It still worked. The drawback is that I cannot change it back to false in postman. But this isn't a huge issue in this case because once a misison is completed, it's completed! It can't become incomplete. 
 
+
+    }
+
+    async getMissionsByRatId(ratId) {
+
+        const missions = await dbContext.Missions.find({ ratId: ratId })
+
+            .populate('location')
+
+
+        return missions
 
     }
 
