@@ -60,6 +60,20 @@ class MissionsService {
 
     }
 
+    async getMissionsAtLocation(locationId) {
+
+        const missions = await dbContext.Missions.find({ locationId: locationId })
+
+            .populate('rat', '-name -picture')
+
+        return missions
+
+
+
+
+
+    }
+
 }
 
 export const missionsService = new MissionsService()
